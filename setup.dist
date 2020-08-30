@@ -1,0 +1,11 @@
+from setuptools import setup
+
+setup(
+    name='git_clone',
+    py_modules=['git_clone'],
+    entry_points={
+        'sceptre.hooks': [
+            'git_clone = git_clone:GitCone',
+        ],
+    }
+)

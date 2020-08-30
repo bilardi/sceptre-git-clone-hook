@@ -52,3 +52,13 @@ clean-test:
 	rm -fr .cache/
 	rm -f .coverage.xml
 	rm -f test-results/
+
+plugin:
+ifeq (, $(TARGET))
+	$(error Please specify TARGET=<existing_sceptre_project_root>)
+endif
+	/bin/test -d "$(TARGET)/hooks" || mkdir -p "$(TARGET)/hooks"
+	/bin/test -d "$(TARGET)/hooks/git_clone" || mkdir -p "$(TARGET)/hooks/git_clone"
+	/bin/cp -rf hook/hook.py "$(TARGET)/hooks/git_clone/git_clone.py"
+	/bin/cp -rf setup.dist "$(TARGET)/hooks/git_clone/setup.py"
+	cd "$(TARGET)/hooks/git_clone/" && pip install .
