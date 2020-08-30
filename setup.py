@@ -7,18 +7,19 @@ __version__ = "0.0.1"
 # https://github.com/Sceptre/project/wiki/sceptre-hook-template
 
 # lowercase, use `-` as separator.
-HOOK_NAME = 'sceptre-hook-template'
+HOOK_NAME = 'sceptre-git-clone-hook'
 # the hook call in sceptre e.g. !command_name.
-HOOK_COMMAND_NAME = 'custom_hook'
+HOOK_COMMAND_NAME = 'git_clone'
 HOOK_MODULE_NAME = 'hook.{}'.format(HOOK_COMMAND_NAME)  # do not change.
 # CamelCase name of hook class in hook.{HOOK_COMMAND_NAME}.
-HOOK_CLASS = 'CustomHook'
-HOOK_DESCRIPTION = ''  # one line summary description
+HOOK_CLASS = 'GitClone'
+HOOK_DESCRIPTION = 'Git clone hook'  # one line summary description
 # if multiple use a single string with comma separated names.
-HOOK_AUTHOR = 'Sceptre'
+HOOK_AUTHOR = 'Alessandra Bilardi'
 # if multiple use single string with commas.
-HOOK_AUTHOR_EMAIL = 'sceptre@cloudreach.com'
-HOOK_URL = 'https://github.com/sceptre/{}'.format(HOOK_NAME)
+HOOK_AUTHOR_EMAIL = 'alessandra.bilardi@gmail.com'
+#HOOK_URL = 'https://github.com/sceptre/{}'.format(HOOK_NAME)
+HOOK_URL = 'https://github.com/bilardi/{}'.format(HOOK_NAME)
 
 with open("README.md") as readme_file:
     README = readme_file.read()
